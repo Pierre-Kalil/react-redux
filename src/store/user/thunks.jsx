@@ -1,8 +1,9 @@
 import axios from "axios";
+import api from "../../services/api";
 
 export const createUserThunks = (data) => {
   return (dispatch) => {
-    axios.post("http://localhost:4000/user", data).then((response) => {
+    api.post("/user", data).then((response) => {
       console.log(response);
       // dispatch(User(response.data));
     });

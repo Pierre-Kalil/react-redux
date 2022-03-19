@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../../services/api";
 import {
   createProduct,
   deleteProduct,
@@ -8,7 +8,7 @@ import {
 
 export const allProductsThunks = () => {
   return async (dispatch) => {
-    await axios.get("http://localhost:4000/product").then((response) => {
+    await api.get("/product").then((response) => {
       dispatch(listProduct(response.data));
     });
   };
@@ -16,8 +16,8 @@ export const allProductsThunks = () => {
 
 export const createProductsThunks = (data) => {
   return async (dispatch) => {
-    await axios
-      .post("http://localhost:4000/product", data, {
+    await api
+      .post("/product", data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
@@ -30,8 +30,8 @@ export const createProductsThunks = (data) => {
 
 export const updateProductThunks = (id, data) => {
   return async (dispatch) => {
-    await axios
-      .patch(`http://localhost:4000/product/${id}`, data, {
+    await api
+      .patch(`/product/${id}`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
@@ -44,8 +44,8 @@ export const updateProductThunks = (id, data) => {
 
 export const deleteProductThunks = (id) => {
   return async (dispatch) => {
-    await axios
-      .delete(`http://localhost:4000/product/${id}`, {
+    await api
+      .delete(`/product/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },

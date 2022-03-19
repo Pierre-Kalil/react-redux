@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../../services/api";
 import {
   createCategory,
   deleteCategory,
@@ -8,7 +8,7 @@ import {
 
 export const allCategoriesThunks = () => {
   return (dispatch) => {
-    axios.get("http://localhost:4000/category").then((response) => {
+    api.get("/category").then((response) => {
       console.log(response);
       dispatch(listCategory(response.data));
     });
@@ -17,8 +17,8 @@ export const allCategoriesThunks = () => {
 
 export const createCategoryThunks = (data) => {
   return async (dispatch) => {
-    await axios
-      .post("http://localhost:4000/category", data, {
+    await api
+      .post("/category", data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
@@ -31,8 +31,8 @@ export const createCategoryThunks = (data) => {
 
 export const updateCategoryThunks = (id, data) => {
   return async (dispatch) => {
-    await axios
-      .patch(`http://localhost:4000/category/${id}`, data, {
+    await api
+      .patch(`/category/${id}`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
@@ -45,8 +45,8 @@ export const updateCategoryThunks = (id, data) => {
 
 export const deleteCategoryThunks = (id) => {
   return async (dispatch) => {
-    await axios
-      .delete(`http://localhost:4000/category/${id}`, {
+    await api
+      .delete(`/category/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
