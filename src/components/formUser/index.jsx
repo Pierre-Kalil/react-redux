@@ -3,7 +3,6 @@ import { createUserThunks } from "../../store/user/thunks";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./validate";
 import { useForm } from "react-hook-form";
-import { Input } from "../input";
 import { FormUser, InputComponent } from "./style";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
@@ -22,6 +21,7 @@ export const UserForm = () => {
 
   const onSubmitData = (data) => {
     dispatch(createUserThunks(data));
+    reset();
   };
   return (
     <>
