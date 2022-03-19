@@ -2,7 +2,6 @@ import { FormComponentLogin, InputComponent } from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./validate";
 import { useForm } from "react-hook-form";
-import { Input } from "../input";
 import { useDispatch } from "react-redux";
 import { loginThunks } from "../../store/login/thunks";
 import { useNavigate, Link } from "react-router-dom";
