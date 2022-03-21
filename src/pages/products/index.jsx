@@ -25,7 +25,6 @@ export const ProductPage = () => {
 
   useEffect(() => {
     dispatch(allProductsThunks());
-
     setFiltered(
       productsList.filter((item) => {
         const regex = new RegExp(search.toLowerCase(), "d");

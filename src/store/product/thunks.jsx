@@ -7,8 +7,9 @@ import {
 } from "./actions";
 
 export const allProductsThunks = () => {
-  return async (dispatch) => {
-    await api.get("/product").then((response) => {
+  return (dispatch) => {
+    api.get("/product").then((response) => {
+      console.log(response);
       dispatch(listProduct(response.data));
     });
   };
@@ -24,7 +25,8 @@ export const createProductsThunks = (data) => {
       })
       .then((response) => {
         console.log(response);
-      });
+      })
+      .catch((err) => console(err));
   };
 };
 

@@ -1,15 +1,22 @@
-import { BoxInputs, BoxSvg, FormComponentBrand, InputComponent } from "./style";
+import {
+  BoxInputs,
+  BoxSvg,
+  FormComponentRegister,
+  InputComponent,
+} from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./validate";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Button } from "../button";
 import { AiOutlineCloseSquare } from "react-icons/ai";
-import { createBrandThunks } from "../../store/brand/thunks";
+import { useSelector } from "react-redux";
+import { updateBrandThunks } from "../../store/brand/thunks";
 
-export const BrandForm = ({ stateModal }) => {
+export const BrandUdateForm = ({ setState }) => {
   const dispatch = useDispatch();
-
+  // const id = useSelector((state) => state.id);
+  // console.log(id);
   const {
     register,
     handleSubmit,
@@ -23,22 +30,24 @@ export const BrandForm = ({ stateModal }) => {
   });
 
   const handleCloseModal = () => {
-    stateModal(false);
+    setState(false);
   };
 
   const onSubmitData = (data) => {
-    dispatch(createBrandThunks(data));
+    console.log(data);
+    dispatch(updateBrandThunks(data));
+
     reset();
-    stateModal(false);
+    setState(false);
   };
   return (
     <>
-      <FormComponentBrand onSubmit={handleSubmit(onSubmitData)}>
+      <FormComponentRegister onSubmit={handleSubmit(onSubmitData)}>
         <BoxSvg>
           <AiOutlineCloseSquare onClick={handleCloseModal} />
         </BoxSvg>
         <div>
-          <h2>Cadastro de Marca</h2>
+          <h2>Atualização de Marca</h2>
         </div>
         <BoxInputs>
           <InputComponent
@@ -50,11 +59,10 @@ export const BrandForm = ({ stateModal }) => {
           />
           {errors?.name && <span>{errors.name?.message}</span>}
         </BoxInputs>
-
-        <Button type="submit" name="Cadastrar">
-          Cadastrar
+        <Button type="submit" name="Atualizar">
+          Atualizar
         </Button>
-      </FormComponentBrand>
+      </FormComponentRegister>
     </>
   );
 };

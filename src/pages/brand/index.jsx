@@ -2,13 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { BrandContainer, BrandsBox, SearchBox } from "./style";
 import { Header } from "../../components/header";
-import { CategoryForm } from "../../components/formCategory";
-
-import { CardCategory } from "../../components/cardsCategory";
-import { CategoryUdateForm } from "../../components/formCategoryUpdate";
 import { allBrandsThunks } from "../../store/brand/thunks";
 import { CardBrand } from "../../components/cardsBrand";
 import { Button } from "../../components/button";
+import { BrandUdateForm } from "../../components/formBrandUpdate";
+import { BrandForm } from "../../components/formBrand";
 
 export const BrandPage = () => {
   const dispatch = useDispatch();
@@ -18,7 +16,7 @@ export const BrandPage = () => {
   const [modelCreate, setModalCreate] = useState(false);
   const [modelUpdate, setModalUpdate] = useState(false);
 
-  const hadleModalCategory = () => {
+  const hadleModal = () => {
     if (modelCreate) {
       setModalCreate(false);
     }
@@ -47,10 +45,10 @@ export const BrandPage = () => {
       <Header />
       <BrandContainer>
         <h1>Marcas</h1>
-        {modelUpdate ? <CategoryUdateForm setState={setModalUpdate} /> : <></>}
-        {modelCreate ? <CategoryForm state={setModalCreate} /> : <></>}
-        <Button onClick={hadleModalCategory} name="Adicionar Categoria">
-          Adicionar Categoria
+        {modelUpdate ? <BrandUdateForm setState={setModalUpdate} /> : <></>}
+        {modelCreate ? <BrandForm state={setModalCreate} /> : <></>}
+        <Button onClick={hadleModal} name="Adicionar Marca">
+          Adicionar Marca
         </Button>
         <SearchBox>
           <input
