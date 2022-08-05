@@ -52,7 +52,7 @@ export const LoginForm = () => {
         <Button type="submit" name="Entrar">
           Enviar
         </Button>
-        <span>
+        <span className="info">
           Ainda não tem uma conta? <Link to="/register">Cadastre-se</Link>
         </span>
       </FormComponentLogin>

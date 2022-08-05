@@ -9,7 +9,6 @@ import {
 export const allProductsThunks = () => {
   return (dispatch) => {
     api.get("/product").then((response) => {
-      console.log(response);
       dispatch(listProduct(response.data));
     });
   };

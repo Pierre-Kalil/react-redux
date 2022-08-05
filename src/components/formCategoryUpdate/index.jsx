@@ -15,8 +15,7 @@ import { useSelector } from "react-redux";
 
 export const CategoryUdateForm = ({ setState }) => {
   const dispatch = useDispatch();
-  // const id = useSelector((state) => state.id);
-  // console.log(id);
+  const id = useSelector((state) => state.statesModel);
   const {
     register,
     handleSubmit,
@@ -35,8 +34,7 @@ export const CategoryUdateForm = ({ setState }) => {
   };
 
   const onSubmitData = (data) => {
-    console.log(data);
-    dispatch(updateCategoryThunks(data));
+    dispatch(updateCategoryThunks(id, data));
 
     reset();
     setState(false);

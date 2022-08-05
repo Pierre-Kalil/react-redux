@@ -11,6 +11,24 @@ export const FormUser = styled.form`
   span {
     text-align: center;
     font-size: 12px;
+    color: orange;
+  }
+
+  .info {
+    color: initial;
+  }
+  a {
+    text-decoration: none;
+    color: #4180ab;
+  }
+
+  @media (min-width: 1440px) {
+    width: 500px;
+    height: 500px;
+
+    span {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -21,5 +39,10 @@ export const InputComponent = styled.input`
 
   :focus {
     border: 2px solid #4180ab;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 20px;
+    font-size: 18px;
   }
 `;

@@ -3,11 +3,11 @@ import { Button } from "../button";
 import { CardsContainer } from "./style";
 import { filterId } from "../../store/statesModel/thunks";
 
-export const CardCategory = ({ category, update, brand }) => {
+export const CardCategory = ({ category, update }) => {
   const dispatch = useDispatch();
   const handleUpdate = (id) => {
-    update();
     dispatch(filterId(id));
+    update();
   };
   return (
     <>

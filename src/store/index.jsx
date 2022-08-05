@@ -16,7 +16,7 @@ const reducers = combineReducers({
   login: loginReducer,
   category: categoryReducer,
   brand: brandReducer,
-  // statesModel: statesModelReducer,
+  statesModel: statesModelReducer,
 });
 
 // const persistConfig = {

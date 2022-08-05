@@ -36,7 +36,7 @@ export const FormProduct = ({ stateModal }) => {
   const handleCloseModal = () => {
     stateModal(false);
   };
-  console.log(categoryId);
+
   return (
     <>
       <>

@@ -4,7 +4,6 @@ import { createBrand, deleteBrand, listBrand, updateBrand } from "./actions";
 export const allBrandsThunks = () => {
   return (dispatch) => {
     api.get("/brand").then((response) => {
-      console.log(response);
       dispatch(listBrand(response.data));
     });
   };

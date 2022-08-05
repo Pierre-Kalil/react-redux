@@ -15,8 +15,7 @@ import { updateBrandThunks } from "../../store/brand/thunks";
 
 export const BrandUdateForm = ({ setState }) => {
   const dispatch = useDispatch();
-  // const id = useSelector((state) => state.id);
-  // console.log(id);
+  const id = useSelector((state) => state.statesModel);
   const {
     register,
     handleSubmit,
@@ -34,8 +33,7 @@ export const BrandUdateForm = ({ setState }) => {
   };
 
   const onSubmitData = (data) => {
-    console.log(data);
-    dispatch(updateBrandThunks(data));
+    dispatch(updateBrandThunks(id, data));
 
     reset();
     setState(false);

@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { UserForm } from "../../components/formUser";
 import { FormContainer, ImgContainer, RegisterContainer } from "./style";
-import jwt_decode from "jwt-decode";
-import register from "../../components/assets/register.svg";
+import register from "../../assets/register.svg";
 
 export const Register = () => {
   const dispatch = useDispatch();

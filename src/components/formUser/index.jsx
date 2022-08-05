@@ -53,8 +53,8 @@ export const UserForm = () => {
         <Button type="submit" name="Enviar">
           Enviar
         </Button>
-        <span>
-          Já possui uma conta? <Link to="/">Cadastre-se</Link>
+        <span className="info">
+          Já possui uma conta? <Link to="/">Entrar</Link>
         </span>
       </FormUser>
     </>

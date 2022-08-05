@@ -9,7 +9,6 @@ import {
 export const allCategoriesThunks = () => {
   return (dispatch) => {
     api.get("/category").then((response) => {
-      console.log(response);
       dispatch(listCategory(response.data));
     });
   };

@@ -2,23 +2,28 @@ import styled from "styled-components";
 
 export const ButtonStyle = styled.button`
   padding: 10px;
-  background: #bfcff7;
+  margin: 5px 0;
+
   border: none;
-  /* color: #fff; */
   border-radius: 2px;
+
   font-size: 16px;
   font-weight: bold;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  background: #bfcff7;
+  box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.2);
 
   :hover {
-    /* filter: grayscale(0.2); */
-    background: #fff;
-    border: 1px solid #bfcff7;
+    background: #ffffff;
     font-weight: bold;
     transition: 0.2s all ease;
   }
   :active {
     background: #bfcff7;
     transition: 0.1s;
+  }
+
+  @media (min-width: 1441px) {
+    padding: 20px;
+    font-size: 24px;
   }
 `;

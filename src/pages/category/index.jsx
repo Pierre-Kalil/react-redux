@@ -67,12 +67,20 @@ export const CategoryPage = () => {
         <CategoryBox>
           <ul className="display-list">
             {filtered && filtered.length > 0
-              ? filtered.map((category, index) => (
-                  <CardCategory update={handleUpdate} category={category} />
+              ? filtered.map((category) => (
+                  <CardCategory
+                    key={category.id}
+                    update={handleUpdate}
+                    category={category}
+                  />
                 ))
               : categorysList &&
                 categorysList.map((category) => (
-                  <CardCategory update={handleUpdate} category={category} />
+                  <CardCategory
+                    key={category.id}
+                    update={handleUpdate}
+                    category={category}
+                  />
                 ))}
           </ul>
         </CategoryBox>

@@ -13,14 +13,17 @@ export const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex: 1;
 
-  width: 50%;
+  width: 40%;
   height: 100vh;
   background: #f9ffff;
 
   div {
     text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
     width: 100%;
   }
 `;
@@ -33,7 +36,7 @@ export const ImgContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex: 1;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     /* background: rgba(0, 0, 0, 0.1); */
     img {

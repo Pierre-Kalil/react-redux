@@ -1,6 +1,6 @@
 import { LoginForm } from "../../components/formLogin";
 import { FormContainer, ImgContainer, LoginContainer } from "./style";
-import login2 from "../../components/assets/login2.svg";
+import login2 from "../../assets/login2.svg";
 
 export const Login = () => {
   return (

@@ -27,7 +27,7 @@ export const ProductPage = () => {
     dispatch(allProductsThunks());
     setFiltered(
       productsList.filter((item) => {
-        const regex = new RegExp(search.toLowerCase(), "d");
+        const regex = new RegExp(search.toLowerCase(), "g");
         return (
           item.name?.toLowerCase().match(regex) ||
           item.description?.toLowerCase().match(regex) ||
